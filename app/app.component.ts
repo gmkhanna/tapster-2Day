@@ -6,7 +6,8 @@ import { Keg } from './keg.model'
   template: `
   <div class="container">
   <h1>Tapster</h1>
-    <keg-list [childKegList]="parentKegList"></keg-list>
+  <keg-list [childKegList]="parentKegList"></keg-list>
+  <new-keg (newKegSender)="addKeg($event)"></new-keg>
   </div>
   `,
   styles: [`
@@ -23,5 +24,9 @@ export class AppComponent {
     new Keg('Talon', 'Mendocino Brewing Co', 7, 10),
     new Keg('Wolf Mother', 'Golden Road', 9, 11.3)
   ];
+
+  addKeg(newKegFromChild: Keg) {
+      this.parentKegList.push(newKegFromChild);
+  }
 
 }
