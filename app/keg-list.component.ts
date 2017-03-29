@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Keg } from './keg.model';
 
 @Component({
@@ -12,6 +12,7 @@ import { Keg } from './keg.model';
       <h4 class="brand"> {{currentKeg.brand}}</h4>
       <p>$<span class="price">{{currentKeg.price}}</span></p>
       <p><span class="abv">{{currentKeg.abv}}</span>% abv</p>
+      <button (click)="editButtonHasBeenClicked(currentKeg)">Edit Keg</button>
     </div>
   </div>
   `,
@@ -30,5 +31,11 @@ import { Keg } from './keg.model';
 
 export class KegListComponent {
   @Input() childKegList: Keg[];
+  @Output() clickSender = new EventEmitter();
+
+  editButtonHasBeenClicked(kegToEdit: Keg) {
+    this.clickSender.emit(kegToEdit);
+  }
+
 
 }
