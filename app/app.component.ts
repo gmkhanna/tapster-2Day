@@ -26,17 +26,18 @@ export class AppComponent {
     new Keg('Wolf Mother', 'Golden Road', 9, 11.3)
   ];
 
-  selectedKeg = null; 
+  selectedKeg = null;
 
   addKeg(newKegFromChild: Keg) {
       this.parentKegList.push(newKegFromChild);
+  }
+
+  editKeg(clickedKeg) {
+    this.selectedKeg = clickedKeg;
   }
 
   finishedEditing() {
     this.selectedKeg = null;
   }
 
-  editKeg(clickedKeg) {
-    this.selectedKeg = clickedKeg;
-  }
 }
