@@ -6,6 +6,7 @@ import { KegListComponent } from './keg-list.component';
 import { NewKegComponent } from './new-keg.component';
 import { EditKegComponent } from './edit-keg.component';
 import { KegVolumeComponent } from './keg-volume.component';
+import { EmptinessPipe } from './emptiness.pipe';
 
 @NgModule({
   imports: [BrowserModule,
@@ -14,7 +15,8 @@ import { KegVolumeComponent } from './keg-volume.component';
                   KegListComponent,
                   NewKegComponent,
                   EditKegComponent,
-                  KegVolumeComponent ],
+                  KegVolumeComponent,
+                  EmptinessPipe ],
   bootstrap: [AppComponent]
 })
 
