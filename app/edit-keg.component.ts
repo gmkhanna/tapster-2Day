@@ -17,6 +17,10 @@ import { Keg } from './keg.model';
            <input [(ngModel)]="childSelectedKeg.brand">
          </div>
          <div class="form-group">
+           <label>Enter Beer Type</label>
+           <input [(ngModel)]="childSelectedKeg.type">
+         </div>
+         <div class="form-group">
            <label>Enter Price</label>
            <input type="number" [(ngModel)]="childSelectedKeg.price">
          </div>

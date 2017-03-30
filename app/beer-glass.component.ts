@@ -5,7 +5,7 @@ import { Keg } from './keg.model';
   selector: "beer-glass",
   template: `
   <div class="glass"><img src="/resources/images/glass.png">
-    <div [class]="beerLevelImg(currentKeg.volume)"></div>
+    <div [style.border-bottom-color]="beerColor(currentKeg.type)" [class]="beerLevelImg(currentKeg.volume, currentKeg.type)"></div>
   </div>
   `
 })
@@ -13,7 +13,7 @@ import { Keg } from './keg.model';
 export class BeerGlassComponent {
   @Input() currentKeg: Keg;
 
-  beerLevelImg(currentVol) {
+  beerLevelImg(currentVol, currentType) {
     if (currentVol <= 10) {
       return "beer-empty";
     }
@@ -24,4 +24,24 @@ export class BeerGlassComponent {
     }
   }
 
+  beerColor(currentType) {
+    if (currentType === "Lager") {
+      return "#F4BF43";
+    }
+    else if (currentType === "Stout") {
+      return "#3C1F15";
+    }
+    else if (currentType === "Red Ale") {
+      return "#9B2913";
+    }
+    else if (currentType === "Double IPA") {
+      return "#F16214";
+    }
+    else if (currentType === "Barleywine") {
+      return "#A60000";
+    }
+    else {
+      return "#F1A33B";
+    }
+  }
 }
