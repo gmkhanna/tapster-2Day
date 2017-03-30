@@ -15,9 +15,7 @@ import { Keg } from './keg.model';
 
     <div class="keg" *ngFor="let currentKeg of childKegList | emptiness:filterByEmptiness">
     <div class="glass"><img src="/resources/images/glass.png">
-    <!-- <div class="beer-full"></div> -->
-    <!-- <div class="beer-half"></div> -->
-    <div class="beer-empty"></div>
+    <div [class]="beerLevelImg(currentKeg.volume)"></div>
 
     </div>
       <h3 class="name">{{currentKeg.name}}</h3>
@@ -74,52 +72,49 @@ import { Keg } from './keg.model';
       top: 7%;
       left: 34%;
       z-index: 0;
-}
+    }
 
-.beer-half {
-  position: absolute;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  width: 20%;
-  height: 0;
-  border: 6px solid rgba(0,0,0,0);
-  border-top: 0 solid;
-  border-bottom: 50px solid #F1A33B;
-  font: normal 100%/normal Arial, Helvetica, sans-serif;
-  color: rgba(0,0,0,1);
-  -o-text-overflow: clip;
-  text-overflow: clip;
-  -webkit-transform: rotateX(180deg)   ;
-  transform: rotateX(180deg)   ;
-  top: 48%;
-  left: 37%;
-  z-index: 0;
-}
+    .beer-half {
+      position: absolute;
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      width: 20%;
+      height: 0;
+      border: 6px solid rgba(0,0,0,0);
+      border-top: 0 solid;
+      border-bottom: 50px solid #F1A33B;
+      font: normal 100%/normal Arial, Helvetica, sans-serif;
+      color: rgba(0,0,0,1);
+      -o-text-overflow: clip;
+      text-overflow: clip;
+      -webkit-transform: rotateX(180deg)   ;
+      transform: rotateX(180deg)   ;
+      top: 48%;
+      left: 37%;
+      z-index: 0;
+    }
 
-.beer-empty {
-  position: absolute;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  width: 20%;
-  height: 0;
-  border: 1px solid rgba(0,0,0,0);
-  border-top: 0 solid;
-  border-bottom: 10px solid #E53800;
-  font: normal 100%/normal Arial, Helvetica, sans-serif;
-  color: rgba(0,0,0,1);
-  -o-text-overflow: clip;
-  text-overflow: clip;
-  -webkit-transform: rotateX(180deg)   ;
-  transform: rotateX(180deg)   ;
-  top: 79%;
-  left: 40%;
-  z-index: 0;
-}
-
-
-
+    .beer-empty {
+      position: absolute;
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      width: 20%;
+      height: 0;
+      border: 1px solid rgba(0,0,0,0);
+      border-top: 0 solid;
+      border-bottom: 10px solid #E53800;
+      font: normal 100%/normal Arial, Helvetica, sans-serif;
+      color: rgba(0,0,0,1);
+      -o-text-overflow: clip;
+      text-overflow: clip;
+      -webkit-transform: rotateX(180deg)   ;
+      transform: rotateX(180deg)   ;
+      top: 79%;
+      left: 40%;
+      z-index: 0;
+    }
   `]
 })
 
@@ -136,6 +131,17 @@ export class KegListComponent {
 
   onChange(optionFromMenu) {
     this.filterByEmptiness = optionFromMenu;
+  }
+
+  beerLevelImg(currentVol) {
+    if (currentVol <= 10) {
+      return "beer-empty";
+    }
+    else if (currentVol <= 62) {
+      return "beer-half";
+    } else {
+      return "beer-full";
+    }
   }
 
 
