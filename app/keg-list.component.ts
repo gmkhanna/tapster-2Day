@@ -25,6 +25,13 @@ import { Keg } from './keg.model';
       width: 20%;
       text-align: center;
     }
+    .keg p:first-of-type {
+      font-size: 40px;
+    }
+    .keg p:last-of-type {
+      font-style: italic;
+    }
+
   `]
 })
 

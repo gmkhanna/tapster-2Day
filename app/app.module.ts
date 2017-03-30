@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { KegListComponent } from './keg-list.component';
 import { NewKegComponent } from './new-keg.component';
-import { EditKegComponent } from './edit-keg.component'
+import { EditKegComponent } from './edit-keg.component';
+import { KegVolumeComponent } from './keg-volume.component';
 
 @NgModule({
   imports: [BrowserModule,
@@ -12,7 +13,8 @@ import { EditKegComponent } from './edit-keg.component'
   declarations: [AppComponent,
                   KegListComponent,
                   NewKegComponent,
-                  EditKegComponent ],
+                  EditKegComponent,
+                  KegVolumeComponent ],
   bootstrap: [AppComponent]
 })
 
