@@ -14,6 +14,9 @@ import { Keg } from './keg.model';
     </select><br>
 
     <div class="keg" *ngFor="let currentKeg of childKegList | emptiness:filterByEmptiness">
+    <div class="glass"><img src="/resources/images/glass.png">
+    <div class="beer"></div>
+    </div>
       <h3 class="name">{{currentKeg.name}}</h3>
       <h4 class="brand"> {{currentKeg.brand}}</h4>
       <p>$<span class="price">{{currentKeg.price}}</span></p>
@@ -38,6 +41,37 @@ import { Keg } from './keg.model';
     .keg p:nth-of-type(2) {
       font-style: italic;
     }
+
+    .glass{
+      position: relative;
+      z-index: 10;
+    }
+    .glass img {
+      position: relative;
+      width: 60%;
+      z-index: 10;
+    }
+
+    .beer {
+      position: absolute;
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      width: 18%;
+      height: 0;
+      border: 14px solid rgba(0,0,0,0);
+      border-top: 0 solid;
+      border-bottom: 100px solid #1abc9c;
+      font: normal 100%/normal Arial, Helvetica, sans-serif;
+      color: rgba(0,0,0,1);
+      -o-text-overflow: clip;
+      text-overflow: clip;
+      -webkit-transform: rotateX(180deg)   ;
+      transform: rotateX(180deg)   ;
+      top: 10px;
+      left: 34%;
+      z-index: 0;
+}
 
   `]
 })
