@@ -4,8 +4,8 @@ import { Keg } from './keg.model';
 @Component ({
   selector: 'edit-keg',
   template:`
-  <div class="row"  *ngIf="childSelectedKeg">
-    <div class="col-sm-6">
+  <div class="row edit-keg"  *ngIf="childSelectedKeg">
+    <div class="col-sm-8">
        <div>
          <h3>Edit Keg</h3>
          <div class="form-group">
@@ -28,10 +28,10 @@ import { Keg } from './keg.model';
            <label>Enter ABV</label>
            <input type="number" [(ngModel)]="childSelectedKeg.abv">
          </div>
-         <button (click)="doneButtonClicked()">Submit</button>
+         <button class="btn" (click)="doneButtonClicked()">Submit</button>
        </div>
      </div>
-     <div class="col-sm-6">
+     <div class="col-sm-4">
        <keg-volume [grandchildSelectedKeg]="childSelectedKeg"></keg-volume>
      </div>
    </div>

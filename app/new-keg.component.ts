@@ -25,7 +25,7 @@ import { Keg } from './keg.model';
     <label>Alcohol By Volume</label>
     <input type="number" #newABV>
   </div>
-  <button (click)="submitForm(newBeer.value, newBrand.value, newType.value, newPrice.value, newABV.value); newBeer.value=''; newBrand.value=''; newType.value=''; newPrice.value=''; newABV.value='';">Add Keg</button>
+  <button class="btn" (click)="submitForm(newBeer.value, newBrand.value, newType.value, newPrice.value, newABV.value); newBeer.value=''; newBrand.value=''; newType.value=''; newPrice.value=''; newABV.value='';">Add Keg</button>
   `
 })
 

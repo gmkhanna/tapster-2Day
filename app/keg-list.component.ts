@@ -22,7 +22,7 @@ import { Keg } from './keg.model';
       <p>$<span class="price">{{currentKeg.price}}</span></p>
       <p><span class="abv">{{currentKeg.abv}}</span>% abv</p>
       <p><span>{{currentKeg.volume}}</span> Pints in Keg</p>
-      <button (click)="editButtonHasBeenClicked(currentKeg)">Edit Keg</button>
+      <button class="btn" (click)="editButtonHasBeenClicked(currentKeg)">Edit Keg</button>
     </div>
   </div>
   `

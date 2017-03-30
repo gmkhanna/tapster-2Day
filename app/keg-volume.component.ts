@@ -7,8 +7,8 @@ import { Keg } from './keg.model';
     <div class="keg-volume">
       <h1>{{grandchildSelectedKeg.volume}}</h1>
       <h4>pints left</h4>
-      <button id="dec1-button" (click)="decVolume(grandchildSelectedKeg, 1)">Decrease By 1</button>
-      <button id="dec-button" (click)="decVolume(grandchildSelectedKeg, 29)"> Decrease By 29</button>
+      <button class="btn" id="dec1-button" (click)="decVolume(grandchildSelectedKeg, 1)">Decrease By 1</button>
+      <button class="btn" id="dec-button" (click)="decVolume(grandchildSelectedKeg, 29)"> Decrease By 29</button>
     </div>
   `
 })

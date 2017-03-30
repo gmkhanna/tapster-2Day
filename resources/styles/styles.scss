@@ -32,6 +32,15 @@ body {
   }
 }
 
+.btn {
+  &:hover{
+    background-color: #F1A33B;
+  }
+  &:focus {
+    // outline-color: white;
+  }
+}
+
 .keg {
   display: inline-block;
   padding: 10px;
@@ -101,4 +110,16 @@ body {
   border-bottom: 10px solid #E53800;
   top: 79%;
   left: 40%;
+}
+
+.keg-volume {
+  text-align: center;
+  button {
+    display: block;
+    margin: 10px auto;
+  }
+}
+
+.edit-keg {
+  max-width: 600px;
 }
