@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Timmana');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  margin-left: 175px;
+  background-color: white;
+  // width: 1020px;
+}
+
+.title-bar {
+  position: fixed;
+  -webkit-transform: rotateZ(-90deg);
+  transform: rotateZ(-90deg);
+  bottom: 40%;
+  left: -400px;
+  height: 20%;
+  width: 55%;
+  padding-left: 200px;
+  padding-top: 30px;
+  background-color: #F1A33B;
+  z-index: -5;
+  h1 {
+    font-family: 'Timmana', sans-serif;
+    text-transform: lowercase;
+    font-size: 100px;
+    letter-spacing: 30px;
+    // text-shadow: 3px 3px rgba(42, 42, 42, 0.5)
+  }
+}
+
+.keg {
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid red;
+  outline: 5px solid black;
+  width: 20%;
+  text-align: center;
+  background-color: #D6D6D6;
+  p:first-of-type {
+    font-size: 40px;
+
+  }
+  p:nth-of-type(2) {
+    font-style: italic;
+  }
+  h3 {
+    font-weight: 700;
+  }
+}
+
+
+.glass{
+  position: relative;
+  z-index: 10;
+  img {
+    position: relative;
+    width: 60%;
+    z-index: 10;
+  }
+}
+
+.beer-full, .beer-half, .beer-empty {
+  position: absolute;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+  border-top: 0 solid;
+  font: normal 100%/normal Arial, Helvetica, sans-serif;
+  color: rgba(0,0,0,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  -webkit-transform: rotateX(180deg)   ;
+  transform: rotateX(180deg)   ;
+  z-index: 0;
+}
+
+.beer-full {
+  width: 18%;
+  border: 14px solid rgba(0,0,0,0);
+  border-bottom: 100px solid #F1A33B;
+  top: 7%;
+  left: 34%;
+}
+
+.beer-half {
+  width: 20%;
+  border: 6px solid rgba(0,0,0,0);
+  border-bottom: 50px solid #F1A33B;
+  top: 48%;
+  left: 37%;
+}
+
+.beer-empty {
+  width: 20%;
+  border: 1px solid rgba(0,0,0,0);
+  border-bottom: 10px solid #E53800;
+  top: 79%;
+  left: 40%;
+}

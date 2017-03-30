@@ -24,23 +24,7 @@ import { Keg } from './keg.model';
       <button (click)="editButtonHasBeenClicked(currentKeg)">Edit Keg</button>
     </div>
   </div>
-  `,
-  styles: [`
-    .keg {
-      display: inline-block;
-      padding: 10px;
-      margin: 10px;
-      outline: 1px solid red;
-      width: 20%;
-      text-align: center;
-    }
-    .keg p:first-of-type {
-      font-size: 40px;
-    }
-    .keg p:nth-of-type(2) {
-      font-style: italic;
-    }
-  `]
+  `
 })
 
 
