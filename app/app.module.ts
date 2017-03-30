@@ -7,6 +7,7 @@ import { NewKegComponent } from './new-keg.component';
 import { EditKegComponent } from './edit-keg.component';
 import { KegVolumeComponent } from './keg-volume.component';
 import { EmptinessPipe } from './emptiness.pipe';
+import { BeerGlassComponent } from './beer-glass.component';
 
 @NgModule({
   imports: [BrowserModule,
@@ -16,7 +17,8 @@ import { EmptinessPipe } from './emptiness.pipe';
                   NewKegComponent,
                   EditKegComponent,
                   KegVolumeComponent,
-                  EmptinessPipe ],
+                  EmptinessPipe,
+                  BeerGlassComponent ],
   bootstrap: [AppComponent]
 })
 
